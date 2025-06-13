@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Blackpoint vs RMM Report</title>
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css'>
+    <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
+    <script src='https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js'></script>
+    <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .summary { margin-bottom: 20px; font-size: 18px; font-weight: bold; }
+    .highlight { background-color: #fff3cd; }
+    button { margin-bottom: 15px; padding: 10px; font-size: 16px; }
+    </style>
+</head>
+<body>
+<div class='summary'>Total Machines in Blackpoint: 6<br>Total Machines in RMM: 7</div><button onclick='toggleMissing_comparison_table()'>Show/Hide Missing from RMM</button><table id='comparison-table' class='display'><thead><tr><th>Blackpoint Name</th><th>RMM Name</th><th>In Portal(s)</th></tr></thead><tbody><tr class=''><td>AMRL-LPT01</td><td>AMRL-LPT01</td><td>Both</td></tr><tr class=''><td>AMRL-LPT02</td><td>AMRL-LPT02</td><td>Both</td></tr><tr class=''><td>AMRL-LPT03</td><td>AMRL-LPT03</td><td>Both</td></tr><tr class=''><td>AMRL-LPT04</td><td>AMRL-LPT04</td><td>Both</td></tr><tr class='highlight'><td>nan</td><td>AMRL-LPT05</td><td>RMM only</td></tr><tr class=''><td>AMRL-LPT06</td><td>AMRL-LPT06</td><td>Both</td></tr><tr class=''><td>APPSERVER</td><td>AppServer</td><td>Both</td></tr></tbody></table><script>
+    $(document).ready(function() {
+        $('#comparison-table').DataTable({
+            paging: false,
+            lengthChange: false,
+            searching: true,
+            ordering: true
+        });
+    });
+
+    var showOnlyMissing_comparison_table = false;
+    function toggleMissing_comparison_table() {
+        showOnlyMissing_comparison_table = !showOnlyMissing_comparison_table;
+        $('#comparison-table tbody tr').each(function() {
+            var portalStatus = $(this).find('td').last().text().trim();
+            if (showOnlyMissing_comparison_table) {
+                if (portalStatus === 'RMM only') {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            } else {
+                $(this).show();
+            }
+        });
+    }
+    </script></body></html>

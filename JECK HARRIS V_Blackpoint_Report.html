@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Blackpoint vs RMM Report</title>
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css'>
+    <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
+    <script src='https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js'></script>
+    <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .summary { margin-bottom: 20px; font-size: 18px; font-weight: bold; }
+    .highlight { background-color: #fff3cd; }
+    button { margin-bottom: 15px; padding: 10px; font-size: 16px; }
+    </style>
+</head>
+<body>
+<div class='summary'>Total Machines in Blackpoint: 38<br>Total Machines in RMM: 40</div><button onclick='toggleMissing_comparison_table()'>Show/Hide Missing from RMM</button><table id='comparison-table' class='display'><thead><tr><th>Blackpoint Name</th><th>RMM Name</th><th>In Portal(s)</th></tr></thead><tbody><tr class=''><td>ALI-120719</td><td>ALI-120719</td><td>Both</td></tr><tr class=''><td>ANGELA-110823</td><td>ANGELA-110823</td><td>Both</td></tr><tr class=''><td>APP-SERVER</td><td>APP-SERVER</td><td>Both</td></tr><tr class=''><td>BAILEY-011624</td><td>BAILEY-011624</td><td>Both</td></tr><tr class=''><td>DAVE-031122</td><td>DAVE-031122</td><td>Both</td></tr><tr class=''><td>DAVID-082920</td><td>DAVID-082920</td><td>Both</td></tr><tr class=''><td>DC-01</td><td>DC-01</td><td>Both</td></tr><tr class=''><td>DESKTOP-5DLIBK2</td><td>DESKTOP-5DLIBK2</td><td>Both</td></tr><tr class=''><td>DESKTOP-97DF1L8</td><td>DESKTOP-97DF1L8</td><td>Both</td></tr><tr class=''><td>DESKTOP-DBSUGI4</td><td>DESKTOP-DBSUGI4</td><td>Both</td></tr><tr class=''><td>DESKTOP-RL8TI5J</td><td>DESKTOP-RL8TI5J</td><td>Both</td></tr><tr class=''><td>DICK-071123</td><td>DICK-071123</td><td>Both</td></tr><tr class=''><td>DKMSURFACE</td><td>DKMSURFACE</td><td>Both</td></tr><tr class=''><td>EDWARD-090823</td><td>EDWARD-090823</td><td>Both</td></tr><tr class=''><td>FIRM-LAPTOP</td><td>FIRM-LAPTOP</td><td>Both</td></tr><tr class='highlight'><td>FIRM-LAPTOP2</td><td>nan</td><td>Blackpoint only</td></tr><tr class=''><td>GEOFF-032323</td><td>GEOFF-032323</td><td>Both</td></tr><tr class=''><td>HOME-KRISTEN</td><td>HOME-KRISTEN</td><td>Both</td></tr><tr class='highlight'><td>nan</td><td>HyperV-DR</td><td>RMM only</td></tr><tr class='highlight'><td>nan</td><td>HyperV-PROD</td><td>RMM only</td></tr><tr class=''><td>JEFF-042723</td><td>JEFF-042723</td><td>Both</td></tr><tr class=''><td>JEREMY-050523</td><td>JEREMY-050523</td><td>Both</td></tr><tr class='highlight'><td>nan</td><td>JHRJ-ALI-HomeLT</td><td>RMM only</td></tr><tr class=''><td>JUANITA-101724</td><td>JUANITA-101724</td><td>Both</td></tr><tr class=''><td>KATHY-032323</td><td>KATHY-032323</td><td>Both</td></tr><tr class=''><td>KATIE-071323</td><td>KATIE-071323</td><td>Both</td></tr><tr class=''><td>KATIE-HOME-PC</td><td>KATIE-HOME-PC</td><td>Both</td></tr><tr class=''><td>KRISTEN-050523</td><td>KRISTEN-050523</td><td>Both</td></tr><tr class=''><td>LAPTOP-HP-SMZ-DEC-2019</td><td>LAPTOP-HP-SMZ-DEC-2019</td><td>Both</td></tr><tr class=''><td>LORRAINE-011624</td><td>LORRAINE-011624</td><td>Both</td></tr><tr class=''><td>MARIA-011624</td><td>MARIA-011624</td><td>Both</td></tr><tr class=''><td>PHI-LT-102424</td><td>PHI-LT-102424</td><td>Both</td></tr><tr class=''><td>PHILIPPE-071123</td><td>PHILIPPE-071123</td><td>Both</td></tr><tr class=''><td>SAMANTHA-090321</td><td>SAMANTHA-090321</td><td>Both</td></tr><tr class=''><td>SEBASTIAN-11823</td><td>SEBASTIAN-11823</td><td>Both</td></tr><tr class=''><td>STEPHEN-090823</td><td>STEPHEN-090823</td><td>Both</td></tr><tr class=''><td>TEMP-091319</td><td>TEMP-091319</td><td>Both</td></tr><tr class=''><td>TINA-052720</td><td>TINA-052720</td><td>Both</td></tr><tr class=''><td>TINA-HOME-PC</td><td>TINA-HOME-PC</td><td>Both</td></tr><tr class=''><td>W11-JRB0SG3</td><td>W11-JRB0SG3</td><td>Both</td></tr><tr class=''><td>WORLDOX-INDEXER</td><td>WORLDOX-INDEXER</td><td>Both</td></tr></tbody></table><script>
+    $(document).ready(function() {
+        $('#comparison-table').DataTable({
+            paging: false,
+            lengthChange: false,
+            searching: true,
+            ordering: true
+        });
+    });
+
+    var showOnlyMissing_comparison_table = false;
+    function toggleMissing_comparison_table() {
+        showOnlyMissing_comparison_table = !showOnlyMissing_comparison_table;
+        $('#comparison-table tbody tr').each(function() {
+            var portalStatus = $(this).find('td').last().text().trim();
+            if (showOnlyMissing_comparison_table) {
+                if (portalStatus === 'RMM only') {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            } else {
+                $(this).show();
+            }
+        });
+    }
+    </script></body></html>

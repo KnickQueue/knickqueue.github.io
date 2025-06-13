@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Blackpoint vs RMM Report</title>
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css'>
+    <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
+    <script src='https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js'></script>
+    <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .summary { margin-bottom: 20px; font-size: 18px; font-weight: bold; }
+    .highlight { background-color: #fff3cd; }
+    button { margin-bottom: 15px; padding: 10px; font-size: 16px; }
+    </style>
+</head>
+<body>
+<div class='summary'>Total Machines in Blackpoint: 21<br>Total Machines in RMM: 29</div><button onclick='toggleMissing_comparison_table()'>Show/Hide Missing from RMM</button><table id='comparison-table' class='display'><thead><tr><th>Blackpoint Name</th><th>RMM Name</th><th>In Portal(s)</th></tr></thead><tbody><tr class=''><td>DC01</td><td>DC01</td><td>Both</td></tr><tr class=''><td>DC02</td><td>DC02</td><td>Both</td></tr><tr class=''><td>FS1</td><td>FS1</td><td>Both</td></tr><tr class=''><td>JASON-HOME</td><td>Jason-Home</td><td>Both</td></tr><tr class=''><td>MG-VMHOST</td><td>MG-VMHost</td><td>Both</td></tr><tr class=''><td>MG-VMHOSTDR</td><td>MG-VMHostDR</td><td>Both</td></tr><tr class=''><td>RDS1</td><td>RDS1</td><td>Both</td></tr><tr class=''><td>RDS2</td><td>RDS2</td><td>Both</td></tr><tr class=''><td>SCOTTP-2</td><td>ScottP-2</td><td>Both</td></tr><tr class=''><td>TRACY-2</td><td>Tracy-2</td><td>Both</td></tr><tr class='highlight'><td>nan</td><td>W11-Accounting</td><td>RMM only</td></tr><tr class='highlight'><td>WIN10-JASON</td><td>nan</td><td>Blackpoint only</td></tr><tr class=''><td>WIN10-PAM</td><td>win10-Pam</td><td>Both</td></tr><tr class=''><td>WIN10-SCOTTM</td><td>WIN10-ScottM</td><td>Both</td></tr><tr class='highlight'><td>nan</td><td>Win11-Alyssa</td><td>RMM only</td></tr><tr class=''><td>WIN11-BAILEY</td><td>Win11-Bailey</td><td>Both</td></tr><tr class='highlight'><td>nan</td><td>Win11-Brenda</td><td>RMM only</td></tr><tr class='highlight'><td>nan</td><td>Win11-Clerk</td><td>RMM only</td></tr><tr class=''><td>WIN11-CONFERENCEROOM</td><td>WIn11-ConferenceRoom</td><td>Both</td></tr><tr class=''><td>WIN11-CRYSTAL</td><td>Win11-Crystal</td><td>Both</td></tr><tr class=''><td>WIN11-ELENA</td><td>Win11-Elena</td><td>Both</td></tr><tr class=''><td>WIN11-HANOSH</td><td>WIN11-Hanosh</td><td>Both</td></tr><tr class=''><td>WIN11-JASON</td><td>WIN11-Jason</td><td>Both</td></tr><tr class=''><td>WIN11-JOSH</td><td>Win11-Josh</td><td>Both</td></tr><tr class='highlight'><td>nan</td><td>Win11-June</td><td>RMM only</td></tr><tr class=''><td>WIN11-KEITH</td><td>Win11-Keith</td><td>Both</td></tr><tr class='highlight'><td>nan</td><td>Win11-Kimberly</td><td>RMM only</td></tr><tr class='highlight'><td>nan</td><td>Win11-Lisy</td><td>RMM only</td></tr><tr class='highlight'><td>nan</td><td>Win11-Marylyn</td><td>RMM only</td></tr><tr class='highlight'><td>nan</td><td>Win11-MGRecep</td><td>RMM only</td></tr></tbody></table><script>
+    $(document).ready(function() {
+        $('#comparison-table').DataTable({
+            paging: false,
+            lengthChange: false,
+            searching: true,
+            ordering: true
+        });
+    });
+
+    var showOnlyMissing_comparison_table = false;
+    function toggleMissing_comparison_table() {
+        showOnlyMissing_comparison_table = !showOnlyMissing_comparison_table;
+        $('#comparison-table tbody tr').each(function() {
+            var portalStatus = $(this).find('td').last().text().trim();
+            if (showOnlyMissing_comparison_table) {
+                if (portalStatus === 'RMM only') {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            } else {
+                $(this).show();
+            }
+        });
+    }
+    </script></body></html>
