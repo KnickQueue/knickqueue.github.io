@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Adlumin vs RMM Report</title>
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css'>
+    <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
+    <script src='https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js'></script>
+    <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .summary { margin-bottom: 20px; font-size: 18px; font-weight: bold; }
+    .highlight { background-color: #fff3cd; }
+    button { margin-bottom: 15px; padding: 10px; font-size: 16px; }
+    </style>
+</head>
+<body>
+<div class='summary'>Total Machines in RMM: 24<br>Total Machines in Adlumin: 24<br>Licensed Device Count: 20<br>Actual Device Count: 25<br>Uninstalled Endpoints: 0</div><button onclick='toggleMissing_comparison_table()'>Show/Hide Missing from Adlumin</button><table id='comparison-table' class='display'><thead><tr><th>Friendly Name</th><th>Site Name</th><th>Name</th><th>Last Online</th><th>Adlumin Machines</th><th>In Portal(s)</th></tr></thead><tbody><tr class=''><td>Amelia-WIN11</td><td>Guralnick</td><td>Amelia-WIN11</td><td>06/09/2025 04:11 am</td><td>AMELIA-WIN11</td><td>Both</td></tr><tr class=''><td>Brian Guralnick LPT</td><td>Guralnick</td><td>BRIAN-LPTWIN10</td><td>06/09/2025 04:12 am</td><td>BRIAN-LPTWIN10</td><td>Both</td></tr><tr class=''><td>Brian Guralnick</td><td>Guralnick</td><td>BRIAN-WIN11</td><td>06/09/2025 04:11 am</td><td>BRIAN-WIN11</td><td>Both</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>CONFERENCE-WIN1</td><td>Adlumin only</td></tr><tr class='highlight'><td>Conference Room</td><td>Guralnick</td><td>Conference-WIN11</td><td>06/09/2025 04:11 am</td><td>nan</td><td>RMM only</td></tr><tr class=''><td>DC1</td><td>Guralnick</td><td>DC1</td><td>06/09/2025 04:12 am</td><td>DC1</td><td>Both</td></tr><tr class=''><td>DC2</td><td>Guralnick_V</td><td>DC2</td><td>06/09/2025 04:12 am</td><td>DC2</td><td>Both</td></tr><tr class=''><td>Fatima Ferreira</td><td>Guralnick</td><td>FATIMA-083023</td><td>06/09/2025 04:12 am</td><td>FATIMA-083023</td><td>Both</td></tr><tr class=''><td>Front Desk</td><td>Guralnick</td><td>FRONTDESK-WIN11</td><td>06/09/2025 04:11 am</td><td>FRONTDESK-WIN11</td><td>Both</td></tr><tr class=''><td>Guy Icangelo</td><td>Guralnick</td><td>GUY-WIN10</td><td>06/09/2025 04:11 am</td><td>GUY-WIN10</td><td>Both</td></tr><tr class=''><td>Hyper-V</td><td>Guralnick_V</td><td>Hyper-V</td><td>06/09/2025 04:11 am</td><td>HYPER-V</td><td>Both</td></tr><tr class=''><td>HyperV-DR</td><td>Guralnick_V</td><td>HyperV-DR</td><td>06/09/2025 04:12 am</td><td>HYPERV-DR</td><td>Both</td></tr><tr class=''><td>Jackie Allen</td><td>Guralnick</td><td>Jackie-Win10</td><td>06/09/2025 04:11 am</td><td>JACKIE-WIN10</td><td>Both</td></tr><tr class=''><td>JESSICA-091123</td><td>Guralnick</td><td>JESSICA-091123</td><td>06/09/2025 04:12 am</td><td>JESSICA-091123</td><td>Both</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>LITIGATIONASSIS</td><td>Adlumin only</td></tr><tr class='highlight'><td>LitigationAssist-111</td><td>Guralnick</td><td>LitigationAssist-WIN11</td><td>06/09/2025 04:11 am</td><td>nan</td><td>RMM only</td></tr><tr class=''><td>Medical Records</td><td>Guralnick</td><td>MEDREC-WIN11</td><td>06/09/2025 04:12 am</td><td>MEDREC-WIN11</td><td>Both</td></tr><tr class=''><td>Natalia Simoes</td><td>Guralnick</td><td>NATALIA-WIN11</td><td>06/09/2025 04:11 am</td><td>NATALIA-WIN11</td><td>Both</td></tr><tr class=''><td>Patricia Martinez</td><td>Guralnick</td><td>PATRICIA-WIN11</td><td>06/09/2025 04:11 am</td><td>PATRICIA-WIN11</td><td>Both</td></tr><tr class=''><td>QuickBooks</td><td>Guralnick</td><td>QuickBooks</td><td>06/09/2025 04:11 am</td><td>QUICKBOOKS</td><td>Both</td></tr><tr class=''><td>Reception</td><td>Guralnick</td><td>RECEPTION-0919</td><td>06/09/2025 04:11 am</td><td>RECEPTION-0919</td><td>Both</td></tr><tr class=''><td>Ligia Guralnick</td><td>Guralnick</td><td>RHODA-WIN10</td><td>06/09/2025 04:11 am</td><td>RHODA-WIN10</td><td>Both</td></tr><tr class=''><td>Sam Guelli</td><td>Guralnick</td><td>Sam-Win11</td><td>06/09/2025 04:11 am</td><td>SAM-WIN11</td><td>Both</td></tr><tr class=''><td>Sam's home PC</td><td>Guralnick</td><td>SAM-WINDOWS10</td><td>06/09/2025 04:11 am</td><td>SAM-WINDOWS10</td><td>Both</td></tr><tr class=''><td>Spare-01</td><td>Guralnick</td><td>Spare-01</td><td>06/09/2025 04:11 am</td><td>SPARE-01</td><td>Both</td></tr><tr class=''><td>TRIALWORKS</td><td>Guralnick</td><td>TRIALWORKS</td><td>06/09/2025 04:11 am</td><td>TRIALWORKS</td><td>Both</td></tr></tbody></table><script>
+    $(document).ready(function() {
+        $('#comparison-table').DataTable({
+            paging: false,
+            lengthChange: false,
+            searching: true,
+            ordering: true
+        });
+    });
+
+    var showOnlyMissing_comparison_table = false;
+    function toggleMissing_comparison_table() {
+        showOnlyMissing_comparison_table = !showOnlyMissing_comparison_table;
+        $('#comparison-table tbody tr').each(function() {
+            var portalStatus = $(this).find('td').last().text().trim();
+            if (showOnlyMissing_comparison_table) {
+                if (portalStatus === 'RMM only') {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            } else {
+                $(this).show();
+            }
+        });
+    }
+    </script></body></html>
