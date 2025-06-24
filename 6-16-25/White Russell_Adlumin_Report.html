@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Adlumin vs RMM Report</title>
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css'>
+    <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
+    <script src='https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js'></script>
+    <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .summary { margin-bottom: 20px; font-size: 18px; font-weight: bold; }
+    .highlight { background-color: #fff3cd; }
+    button { margin-bottom: 15px; padding: 10px; font-size: 16px; }
+    </style>
+</head>
+<body>
+<div class='summary'>Total Machines in RMM: 8<br>Total Machines in Adlumin: 27<br>Licensed Device Count: 25<br>Actual Device Count: 28<br>Uninstalled Endpoints: 0</div><button onclick='toggleMissing_comparison_table()'>Show/Hide Missing from Adlumin</button><table id='comparison-table' class='display'><thead><tr><th>Friendly Name</th><th>Site Name</th><th>Name</th><th>Last Online</th><th>Adlumin Machines</th><th>In Portal(s)</th></tr></thead><tbody><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>ANNE-W10</td><td>Adlumin only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>ANTHONY-W10</td><td>Adlumin only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>DC01</td><td>Adlumin only</td></tr><tr class=''><td>DC3</td><td>White Russell</td><td>DC3</td><td>06/18/2025 04:35 am</td><td>DC3</td><td>Both</td></tr><tr class=''><td>FS2</td><td>White Russell</td><td>FS2</td><td>06/18/2025 04:36 am</td><td>FS2</td><td>Both</td></tr><tr class='highlight'><td>HYPERVHOST-DR</td><td>White Russell_V</td><td>Hypervhost-DR</td><td>06/18/2025 04:35 am</td><td>nan</td><td>RMM only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>JIM-PC</td><td>Adlumin only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>JIM-W11</td><td>Adlumin only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>LAURA-PC</td><td>Adlumin only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>NPB-101</td><td>Adlumin only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>NPB-102</td><td>Adlumin only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>NPB-108</td><td>Adlumin only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>NPB-112</td><td>Adlumin only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>NPB-113</td><td>Adlumin only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>NPB-114</td><td>Adlumin only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>NPB-50</td><td>Adlumin only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>NPB-51</td><td>Adlumin only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>NPB-70-WIN10</td><td>Adlumin only</td></tr><tr class=''><td>Prolaw2</td><td>White Russell</td><td>Prolaw2</td><td>06/18/2025 04:35 am</td><td>PROLAW2</td><td>Both</td></tr><tr class=''><td>RDS1</td><td>White Russell</td><td>RDS1</td><td>06/18/2025 04:35 am</td><td>RDS1</td><td>Both</td></tr><tr class=''><td>RDS2</td><td>White Russell</td><td>RDS2</td><td>06/18/2025 04:36 am</td><td>RDS2</td><td>Both</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>RUSSELL-W10</td><td>Adlumin only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>SABRINA-W11</td><td>Adlumin only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>SARAH-W11</td><td>Adlumin only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>SHANNON-PC</td><td>Adlumin only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>STACEY-PC</td><td>Adlumin only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>WR-PC2</td><td>Adlumin only</td></tr><tr class='highlight'><td>WRLaw-HyperV FS2 RDS2 DC3</td><td>White Russell_V</td><td>WRLaw-HyperV</td><td>06/18/2025 04:35 am</td><td>nan</td><td>RMM only</td></tr><tr class='highlight'><td>WRLaw-VMHost Prolaw2 RDS1 DC01</td><td>White Russell_V</td><td>WRLaw-VMHost</td><td>06/18/2025 04:36 am</td><td>nan</td><td>RMM only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>WRTRIAL-1</td><td>Adlumin only</td></tr></tbody></table><script>
+    $(document).ready(function() {
+        $('#comparison-table').DataTable({
+            paging: false,
+            lengthChange: false,
+            searching: true,
+            ordering: true
+        });
+    });
+
+    var showOnlyMissing_comparison_table = false;
+    function toggleMissing_comparison_table() {
+        showOnlyMissing_comparison_table = !showOnlyMissing_comparison_table;
+        $('#comparison-table tbody tr').each(function() {
+            var portalStatus = $(this).find('td').last().text().trim();
+            if (showOnlyMissing_comparison_table) {
+                if (portalStatus === 'RMM only') {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            } else {
+                $(this).show();
+            }
+        });
+    }
+    </script></body></html>
