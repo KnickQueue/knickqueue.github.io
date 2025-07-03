@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset='utf-8'>
-    <title>Blackpoint vs RMM Report</title>
+    <title>tradesmen quality plastering - Blackpoint vs RMM</title>
     <link rel='stylesheet' href='https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css'>
     <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
     <script src='https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js'></script>
@@ -30,7 +30,7 @@
         $('#comparison-table tbody tr').each(function() {
             var portalStatus = $(this).find('td').last().text().trim();
             if (showOnlyMissing_comparison_table) {
-                if (portalStatus === 'RMM only') {
+                if (portalStatus === 'Blackpoint only') {
                     $(this).show();
                 } else {
                     $(this).hide();

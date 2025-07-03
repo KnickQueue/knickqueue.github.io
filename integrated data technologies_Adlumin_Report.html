@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>integrated data technologies - Adlumin vs RMM</title>
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css'>
+    <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
+    <script src='https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js'></script>
+    <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .summary { margin-bottom: 20px; font-size: 18px; font-weight: bold; }
+    .highlight { background-color: #fff3cd; }
+    button { margin-bottom: 15px; padding: 10px; font-size: 16px; }
+    </style>
+</head>
+<body>
+<div class='summary'>Total Machines in Adlumin: 23<br>Total Machines in RMM: 31<br>Licensed Device Count: 10<br>Actual Device Count: 24<br>Uninstalled Endpoints: 0</div><button onclick='toggleMissing_comparison_table()'>Show/Hide Missing from RMM</button><table id='comparison-table' class='display'><thead><tr><th>Friendly Name</th><th>Site Name</th><th>Name</th><th>Last Online</th><th>Adlumin Machines</th><th>In Portal(s)</th></tr></thead><tbody><tr class='highlight'><td>BOB-HomeLPT</td><td>IDT</td><td>BOB-HomeLPT</td><td>04/15/2025 12:31 pm</td><td>nan</td><td>RMM only</td></tr><tr class=''><td>BOB-LAPTOP</td><td>IDT</td><td>Bob-Laptop</td><td>06/30/2025 06:17 pm</td><td>BOB-LAPTOP</td><td>Both</td></tr><tr class=''><td>BOB-LPT</td><td>IDT</td><td>Bob-LPT</td><td>06/24/2025 05:17 pm</td><td>BOB-LPT</td><td>Both</td></tr><tr class=''><td>BOB-PC</td><td>IDT</td><td>Bob-PC</td><td>07/01/2025 04:34 am</td><td>BOB-PC</td><td>Both</td></tr><tr class=''><td>Chip-PC UPS</td><td>IDT</td><td>Chip-PC</td><td>07/01/2025 04:35 am</td><td>CHIP-PC</td><td>Both</td></tr><tr class=''><td>CHRIS-THINK</td><td>IDT</td><td>CHRIS-THINK</td><td>06/26/2025 12:25 am</td><td>CHRIS-THINK</td><td>Both</td></tr><tr class='highlight'><td>CHRIS-WIN11</td><td>IDT</td><td>CHRIS-WIN11</td><td>11/22/2024 02:02 pm</td><td>nan</td><td>RMM only</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>CONFERENCE</td><td>Adlumin only</td></tr><tr class=''><td>DCB-IDTofc</td><td>IDT</td><td>DCB-IDTofc</td><td>07/01/2025 04:35 am</td><td>DCB-IDTOFC</td><td>Both</td></tr><tr class=''><td>DESKTOP-HQEV2F6</td><td>IDT</td><td>DESKTOP-HQEV2F6</td><td>07/01/2025 04:36 am</td><td>DESKTOP-HQEV2F6</td><td>Both</td></tr><tr class=''><td>CATHY-LAPTOP</td><td>IDT</td><td>DESKTOP-TN2P58S</td><td>06/29/2025 04:46 pm</td><td>DESKTOP-TN2P58S</td><td>Both</td></tr><tr class=''><td>Dispatch-Win10</td><td>IDT</td><td>Dispatch</td><td>07/01/2025 04:35 am</td><td>DISPATCH</td><td>Both</td></tr><tr class=''><td>DJ Home</td><td>IDT</td><td>DJ-Home</td><td>07/01/2025 04:35 am</td><td>DJ-HOME</td><td>Both</td></tr><tr class=''><td>FS1</td><td>IDT</td><td>FS1</td><td>07/01/2025 04:36 am</td><td>FS1</td><td>Both</td></tr><tr class='highlight'><td>Dennis</td><td>IDT</td><td>IDT-LT01</td><td>06/25/2025 05:28 pm</td><td>nan</td><td>RMM only</td></tr><tr class='highlight'><td>Derek</td><td>IDT</td><td>IDT-LT02</td><td>06/23/2025 10:02 am</td><td>nan</td><td>RMM only</td></tr><tr class='highlight'><td>D J</td><td>IDT</td><td>IDT-LT03</td><td>05/04/2025 10:30 am</td><td>nan</td><td>RMM only</td></tr><tr class='highlight'><td>Josh</td><td>IDT</td><td>IDT-LT04</td><td>02/05/2023 05:38 pm</td><td>nan</td><td>RMM only</td></tr><tr class=''><td>Don</td><td>IDT</td><td>IDT-LT05</td><td>07/01/2025 04:35 am</td><td>IDT-LT05</td><td>Both</td></tr><tr class=''><td>Ulises</td><td>IDT</td><td>IDT-LT06</td><td>06/30/2025 08:24 pm</td><td>IDT-LT06</td><td>Both</td></tr><tr class=''><td>Nick</td><td>IDT</td><td>IDT-LT07</td><td>07/01/2025 04:35 am</td><td>IDT-LT07</td><td>Both</td></tr><tr class='highlight'><td>Test</td><td>IDT</td><td>IDT-Test</td><td>07/01/2025 04:35 am</td><td>nan</td><td>RMM only</td></tr><tr class=''><td>Javier</td><td>IDT</td><td>Javier</td><td>07/01/2025 04:36 am</td><td>JAVIER</td><td>Both</td></tr><tr class=''><td>JOSH-PC</td><td>IDT</td><td>Josh-PC</td><td>07/01/2025 04:35 am</td><td>JOSH-PC</td><td>Both</td></tr><tr class=''><td>KU-PC</td><td>IDT</td><td>Katrina-Win11</td><td>07/01/2025 04:35 am</td><td>KATRINA-WIN11</td><td>Both</td></tr><tr class=''><td>MARTYWKS</td><td>IDT</td><td>MARTYWKS</td><td>07/01/2025 04:34 am</td><td>MARTYWKS</td><td>Both</td></tr><tr class='highlight'><td>Nicholass-MacBook-Air.local</td><td>IDT</td><td>Nicholass-MacBook-Air.local</td><td>06/27/2025 11:05 am</td><td>nan</td><td>RMM only</td></tr><tr class=''><td>Nick-Win10</td><td>IDT</td><td>Nick-Win10</td><td>07/01/2025 04:36 am</td><td>NICK-WIN10</td><td>Both</td></tr><tr class=''><td>Rick-Win11</td><td>IDT</td><td>Rick-Win11</td><td>07/01/2025 04:35 am</td><td>RICK-WIN11</td><td>Both</td></tr><tr class='highlight'><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>RICKMAINPC-WIN1</td><td>Adlumin only</td></tr><tr class='highlight'><td>RICKMAINPC-WIN1</td><td>IDT</td><td>RickMainPC-WIN10</td><td>07/01/2025 04:35 am</td><td>nan</td><td>RMM only</td></tr><tr class='highlight'><td>SentinelONE-TEST</td><td>IDT</td><td>SentinelONE-TEST</td><td>06/30/2025 01:02 pm</td><td>nan</td><td>RMM only</td></tr><tr class=''><td>Tina-Win11</td><td>IDT</td><td>Tina-Win11</td><td>07/01/2025 04:35 am</td><td>TINA-WIN11</td><td>Both</td></tr></tbody></table><script>
+    $(document).ready(function() {
+        $('#comparison-table').DataTable({
+            paging: false,
+            lengthChange: false,
+            searching: true,
+            ordering: true
+        });
+    });
+
+    var showOnlyMissing_comparison_table = false;
+    function toggleMissing_comparison_table() {
+        showOnlyMissing_comparison_table = !showOnlyMissing_comparison_table;
+        $('#comparison-table tbody tr').each(function() {
+            var portalStatus = $(this).find('td').last().text().trim();
+            if (showOnlyMissing_comparison_table) {
+                if (portalStatus === 'Adlumin only') {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            } else {
+                $(this).show();
+            }
+        });
+    }
+    </script></body></html>
